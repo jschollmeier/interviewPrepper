@@ -2,10 +2,10 @@ const router = require("express").Router();
 const userController = require("../../controllers/userController");
 
 //will match with "api/users/login"
-router.route("/login")
-    .post(passport.authenticate("local"), function(req, res) {
-        res.json(req.user);
-    })
+// router.route("/login")
+//     .post(passport.authenticate("local"), function(req, res) {
+//         res.json(req.user);
+//     })
 
     
 //will match with "api/users/signup"
@@ -24,6 +24,8 @@ router.route("user_data")
 
 router.route("/:email")
     .get(userController.findByEmail)
+
+module.exports = router;
 
 
 
