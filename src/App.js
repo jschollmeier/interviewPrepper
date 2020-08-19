@@ -5,7 +5,7 @@ import { Route, Link } from 'react-router-dom'
 import Signup from './components/sign-up'
 import LoginForm from './components/login-form'
 import Navbar from './components/navbar'
-import Home from './components/home'
+
 
 class App extends Component {
   constructor() {
@@ -59,9 +59,10 @@ class App extends Component {
           <p>Join the party, {this.state.username}!</p>
         }
         {/* Routes to different components */}
-        <Route
+       
+        {/* <Route
           exact path="/"
-          component={Home} />
+          component={Home} /> */}
         <Route
           path="/login"
           render={() =>
