@@ -5,7 +5,12 @@ import { Route, Link } from 'react-router-dom'
 import Signup from './components/sign-up'
 import LoginForm from './components/login-form'
 import Navbar from './components/navbar'
+<<<<<<< HEAD
 
+=======
+import Home from './components/home'
+import Prep from './components/Prep'
+>>>>>>> b1e113113b17e4f2aaad156fbf2e93ab6f38cc29
 
 class App extends Component {
   constructor() {
@@ -74,6 +79,11 @@ class App extends Component {
           path="/signup"
           render={() =>
             <Signup/>}
+        />
+        <Route
+          exact path="/Prep"
+          render={() =>
+            <Prep/>}
         />
 
       </div>

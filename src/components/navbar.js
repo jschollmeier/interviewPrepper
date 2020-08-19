@@ -54,6 +54,9 @@ class Navbar extends Component {
                                     <Link to="/signup" className="btn btn-link">
                                     <span className="text-secondary">sign up</span>
 				</Link>
+                                    <Link to="/Prep" className="btn btn-link">
+                                    <span className="text-secondary">technical prep</span>
+				</Link>
                                 </section>
                             )}
                     </div>
