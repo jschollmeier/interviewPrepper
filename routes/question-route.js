@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const algorithm = require("../models/algorithim");
+const algorithm = require("../models/algorithm");
 
 
 module.exports = router;

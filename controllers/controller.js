@@ -1,4 +1,4 @@
-const db = require("../models/algorithim");
+const db = require("../models/algorithm");
 
 
 module.exports = { 

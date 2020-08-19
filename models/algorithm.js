@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const algorithimSchema = new Schema({
-  algorithim: {
+const algorithmSchema = new Schema({
+  algorithm: {
     type: String,
     required: true,
     
@@ -14,6 +14,6 @@ const algorithimSchema = new Schema({
   }
 });
 
-const Algorithim = mongoose.model("questions", algorithimSchema);
-module.exports = Algorithim;
+const Algorithm = mongoose.model("questions", algorithmSchema);
+module.exports = Algorithm;
 
