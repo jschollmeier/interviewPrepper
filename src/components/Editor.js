@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AceEditor from 'react-ace';
 
-import "ace-builds/src-noconflict/mode-java";
+import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/theme-github";
 // import "react-ace-builds/webpack-resolver";
 

@@ -6,6 +6,7 @@ import Signup from './components/sign-up'
 import LoginForm from './components/login-form'
 import Navbar from './components/navbar'
 import Home from './components/home'
+import Prep from './components/Prep'
 
 class App extends Component {
   constructor() {
@@ -73,6 +74,11 @@ class App extends Component {
           path="/signup"
           render={() =>
             <Signup/>}
+        />
+        <Route
+          exact path="/Prep"
+          render={() =>
+            <Prep/>}
         />
 
       </div>
