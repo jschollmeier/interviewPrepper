@@ -6,9 +6,11 @@ const bodyParser = require("body-parser");
 const app = express()
 
 const PORT = process.env.PORT || 3000;
+
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/mydb", {
   useCreateIndex: true,
-  useNewUrlParser: true
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 }
 );
 
