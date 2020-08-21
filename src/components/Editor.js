@@ -29,7 +29,10 @@ export default class Editor extends Component {
     return (
       <div>
         <SplitEditor
+            width={ '100%' }
+            height={ '60vh' }
             mode="javascript"
+            wrapEnabled={ true }
             theme="monokai"
             onChange={(value, stat) => {
               console.log(value);
