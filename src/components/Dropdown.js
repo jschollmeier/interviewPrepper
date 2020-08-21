@@ -49,7 +49,7 @@ export default class DropDown extends Component{
         this.setState({open:true})
         }else{
             this.setState({
-                redirectTo: '/'
+                redirectTo: '/login'
             })
             alert("Please log in to add a post")
     

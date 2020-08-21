@@ -1,22 +1,23 @@
 import React from 'react';
 import Example from "./Dropdown"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 
-export default function BlogCard({data, loggedIn, username}) {
+export default function BlogCard({data, loggedIn, username, deleteBlogPost}) {
     
-    console.log(loggedIn);
+    
     return (
         
         <div className="card" style={{margin:"25px", width:"60%", marginRight:"20%", marginLeft:"20%",backgroundColor:"#61DAFB" }}>
-            <div className="card-header text-muted" style={{textAlign: "right", whiteSpace:"nowrap"}}>
-            <div style={{ marginTop:"-5px", fontSize:"10px"}}>
-                    posted by {data.username}<br></br>  at {data.date}
-                    </div>
-                    
+            
 
-            </div>
+            
             <div className="card-body" style={{textAlign:"left"}}>
-                <h5 className="card-title" style={{marginTop:"-40px"}}><u>{data.title}</u></h5>
+                <div style={{textAlign:"right",marginTop:"-10px"}}>
+            <button className="btn btn-primary btn-sm" title="delete post" onClick={function(){deleteBlogPost(data._id)}} style={{padding:"0",border:"none",background:"none"}}><FontAwesomeIcon icon={faTrash} /></button>
+                </div>
+                <h5 className="card-title" style={{marginTop:"-20px"}}><u>{data.title}</u></h5>
                 
                 
                     
@@ -24,13 +25,23 @@ export default function BlogCard({data, loggedIn, username}) {
                         
              </div>
              <div className="card-footer text-muted" style={{textAlign: "right", whiteSpace:"nowrap"}}>
-                    
+                   
+             <div style={{marginLeft:"-10px", marginBottom:"-35px", fontSize:"10px", textAlign:"left"}}>
+                
+                posted by {data.username}<br></br>  at {data.date} 
+                </div>
+
                     <Example 
                         id= {data._id}
                         loggedIn={loggedIn}
                         username={username}
                         
                     />
+                   
+                    
+                    
+
+                    
                     
             </div>
             
