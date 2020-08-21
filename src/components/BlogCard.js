@@ -1,8 +1,10 @@
 import React from 'react';
+import Example from "./Dropdown"
 
-export default function BlogCard({data}) {
+
+export default function BlogCard({data, loggedIn, username}) {
     
-    
+    console.log(loggedIn);
     return (
         
         <div className="card" style={{margin:"25px", width:"60%", marginRight:"20%", marginLeft:"20%",backgroundColor:"#61DAFB" }}>
@@ -23,9 +25,15 @@ export default function BlogCard({data}) {
              </div>
              <div className="card-footer text-muted" style={{textAlign: "right", whiteSpace:"nowrap"}}>
                     
-                    <button className="btn btn-primary btn-sm" style={{marginLeft:"5px",display:"inline-block"}}>Comments</button>
-
+                    <Example 
+                        id= {data._id}
+                        loggedIn={loggedIn}
+                        username={username}
+                        
+                    />
+                    
             </div>
+            
         </div>
     )
     

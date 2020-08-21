@@ -10,6 +10,7 @@ const PORT = 8080
 // Route requires
 const user = require('./routes/user')
 const blog = require('./routes/blogs')
+const comments = require('./routes/comments')
 
 // MIDDLEWARE
 app.use(morgan('dev'))
@@ -38,6 +39,7 @@ app.use(passport.session()) // calls the deserializeUser
 // Routes
 app.use('/user', user)
 app.use('/blogs', blog)
+app.use('/comments', comments)
 
 // Starting Server 
 app.listen(PORT, () => {
