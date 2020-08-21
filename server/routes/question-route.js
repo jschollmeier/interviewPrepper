@@ -2,10 +2,15 @@ const router = require("express").Router()
 const questions = require("../controllers/question-controller.js");
 
 
-router.post("/questions", questions.create);
+router.route("/questions")
+    .get(blogController.findAll)
+    .post(blogController.create);
 
-router.get("/questions", questions.findAll);
+router  
+    .route("questions/:id")
+    .get(blogController.findById)
+    .put(blogController.update)
+    .delete(blogController.remove);
 
-router.get('/questions/:questionId', questions.findOne);
 
 module.exports = router;
