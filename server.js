@@ -11,11 +11,16 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/mydb", {
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true
-}
-);
+ 
+}).then(() => {
+  console.log("connected to mongodb");
+});
 
 
-app.get("/",(req, res) => {
+
+
+
+app.get("/", (req, res) => {
   res.send("Hello World!")
 })
 
