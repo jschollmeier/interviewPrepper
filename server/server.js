@@ -10,6 +10,7 @@ const PORT = 8080
 // Route requires
 const user = require('./routes/user')
 const blog = require('./routes/blogs')
+const comments = require('./routes/comments')
 const questions = require('./routes/question-route')
 const answers = require('./routes/answer-route')
 
@@ -41,6 +42,7 @@ app.use(passport.session()) // calls the deserializeUser
 // Routes
 app.use('/user', user)
 app.use('/blogs', blog)
+app.use('/comments', comments)
 app.use('/questions', questions)
 app.use('/answers', answers)
 

@@ -5,6 +5,8 @@ import API from "../utils/API"
 import { Redirect } from 'react-router-dom'
 
 
+
+
 export default class Blog extends Component {
 
     state = {
@@ -37,6 +39,7 @@ loadBlogs = () => {
         .catch(err => console.log(err));
     
 };
+
 
 openup = () => {
     if (this.props.loggedIn){
@@ -85,6 +88,7 @@ render(){
     
         
     const blogger = this.state.blogs;
+    console.log(this.state.loggedIn)
     return (
         <div>
             <h1>Blog</h1>
@@ -98,7 +102,8 @@ render(){
             saveBlogPost = {this.saveBlogPost}
             closeModal = {this.closeModal}
             />
-            {blogger.map((blogObj, i) => <BlogCard key={i} data={blogObj} />)}
+            {blogger.map((blogObj, i) => <BlogCard key={i} username={this.props.username} loggedIn={this.props.loggedIn} data={blogObj} /> )}
+            
             
             
             
