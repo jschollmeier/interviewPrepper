@@ -39,11 +39,11 @@ class Navbar extends Component {
                     <div className="col-4" >
                         {loggedIn ? (
                             <section className="navbar-section">
-                                <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
+                                <Link to="/login" className="btn btn-link text-secondary" onClick={this.logout}>
                                 <span className="text-secondary">logout</span></Link>
                                 <Link to="/Prep" className="btn btn-link">
                                     <span className="text-secondary">Technical Prep</span></Link>
-                                <Link to="/Blog" className="btn btn-link">
+                                <Link to="/" className="btn btn-link">
                                     <span className="text-secondary">Blog</span></Link>
 
                             </section>
@@ -52,7 +52,7 @@ class Navbar extends Component {
                                     {/* <Link to="/" className="btn btn-link text-secondary">
                                         <span className="text-secondary">home</span>
                                         </Link> */}
-                                    <Link to="/" className="btn btn-link text-secondary">
+                                    <Link to="/login" className="btn btn-link text-secondary">
                                     <span className="text-secondary">login</span>
 				</Link>
                                     <Link to="/signup" className="btn btn-link">
@@ -61,7 +61,7 @@ class Navbar extends Component {
                                     <Link to="/Prep" className="btn btn-link">
                                     <span className="text-secondary">technical prep</span>
 				</Link>
-                                    <Link to="/Blog" className="btn btn-link">
+                                    <Link to="/" className="btn btn-link">
                                     <span className="text-secondary">Blog</span>
 				</Link>
                                 </section>

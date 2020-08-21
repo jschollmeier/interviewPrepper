@@ -73,6 +73,18 @@ saveBlogPost = () => {
         .catch(err => console.log(err));
         
 }
+
+deleteBlogPost = (blogId) => {
+    API.deleteBlog(blogId)
+    .then(res => this.loadBlogs())
+    .catch(err => console.log(err));
+
+    API.deleteComments(blogId)
+    .then(res => this.loadBlogs())
+    .catch(err => console.log(err));
+
+}
+
 titleInputChange = (event) => {
     
     this.setState({title: event.target.value})
@@ -102,7 +114,15 @@ render(){
             saveBlogPost = {this.saveBlogPost}
             closeModal = {this.closeModal}
             />
-            {blogger.map((blogObj, i) => <BlogCard key={i} username={this.props.username} loggedIn={this.props.loggedIn} data={blogObj} /> )}
+            {blogger.map((blogObj, i) =>
+            <BlogCard 
+            key={i} 
+            username={this.props.username} 
+            loggedIn={this.props.loggedIn}
+            deleteBlogPost={this.deleteBlogPost} 
+            data={blogObj} 
+            /> 
+            )}
             
             
             
