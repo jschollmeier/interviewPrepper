@@ -1,8 +1,11 @@
-model.exports = (app) => {
-    const answers = require("../models/question-model");
+const router = require("express").Router()
+const answers = require("../controllers/answer-controller.js");
 
-    app.post("/answers", answers.create);
+router.post("/answers", answers.create);
 
-    app.get("/answers", answers.findAll);
- 
-}
+router.get("/answers", answers.findAll);
+
+router.get('/answers/:answerId', answers.findOne);
+
+
+module.exports = router;

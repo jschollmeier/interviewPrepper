@@ -1,10 +1,11 @@
-module.exports = (app) => {
-    const questions = require("../controllers/question-controller.js");
+const router = require("express").Router()
+const questions = require("../controllers/question-controller.js");
 
-    // Create a new Note
-    app.post("/questions", questions.create);
 
-    // Retrieve all Notes
-    app.get("/questions", questions.findAll);
+router.post("/questions", questions.create);
 
-} 
+router.get("/questions", questions.findAll);
+
+router.get('/questions/:questionId', questions.findOne);
+
+module.exports = router;

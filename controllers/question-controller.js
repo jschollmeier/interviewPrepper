@@ -1,6 +1,6 @@
 const Question = require('../models/question-model.js');
 
-
+// create a new
 exports.create = (req, res) => {
    
     if(!req.body.content) {
@@ -26,7 +26,7 @@ exports.create = (req, res) => {
     });
 };
 
-
+// find all
 exports.findAll = (req, res) => {
     Question.find()
     .then(questions => {
@@ -38,6 +38,27 @@ exports.findAll = (req, res) => {
     });
 };
 
+// find by id
+exports.findOne = (req, res) => {
+    Question.findById(req.params.questionId)
+    .then(question => {
+        if(!question) {
+            return res.status(404).send({
+                message: "Cannot find Question with this id " + req.params.questionId
+            });            
+        }
+        res.send(question);
+    }).catch(err => {
+        if(err.kind === 'ObjectId') {
+            return res.status(404).send({
+                message: "Cannot find Question with this id " + req.params.questionId
+            });                
+        }
+        return res.status(500).send({
+            message: "Error can't retrive Question this with id " + req.params.questionId
+        });
+    });
+};
 
     
 
