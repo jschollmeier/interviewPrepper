@@ -8,4 +8,6 @@ router.get("/questions", questions.findAll);
 
 router.get('/questions/:questionId', questions.findOne);
 
+router.delete('/questions/:questionId', questions.delete);
+
 module.exports = router;

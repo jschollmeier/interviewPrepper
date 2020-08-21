@@ -14,6 +14,8 @@ export default {
     },
     getComments: function(blogId) {
         return axios.get("/comments/"+blogId)
+    },
+    getQuestion: function() {
+        return axios.get("/questions")
     }
-
 }
