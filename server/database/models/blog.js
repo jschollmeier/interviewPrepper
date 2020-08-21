@@ -4,11 +4,8 @@ const Schema = mongoose.Schema;
 const blogSchema = new Schema({
     title: { type: String, required: true},
     body: { type: String, required: false},
-    userId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
-    } 
+    username: { type:String, required: true},
+    date: { type: Date, default: Date.now }
 });
 
 const Blog = mongoose.model("Blog", blogSchema);
