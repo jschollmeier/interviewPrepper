@@ -11,5 +11,7 @@ const answerSchema = new Schema({
  }
 });
 
-model.exports = mongoose.model("Answer", answerSchema);
+const Answer = mongoose.model("Answer", answerSchema);
+
+module.exports = Answer;
 

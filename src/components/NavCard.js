@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Tabs from './Tabs';
+import '../style/NavCard.css'
+
 //modified from https://codepen.io/quentunahelper/pen/xwjmjg
   class NavCard extends Component {
     render() {

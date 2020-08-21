@@ -1,4 +1,5 @@
-const q = require('../models/question-model.js');
+const q = require('../database/models/question-model.js');
+
 
 module.exports = {
     create: function(req, res){
