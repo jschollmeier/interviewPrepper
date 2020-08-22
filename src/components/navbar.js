@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import logo from '../logo.svg';
 import '../App.css';
 import axios from 'axios'
+import bkg from "./vintage-wallpaper.png"
 
 class Navbar extends Component {
     constructor() {
@@ -35,7 +36,7 @@ class Navbar extends Component {
         return (
             <div>
 
-                <header className="navbar App-header" id="nav-container">
+                <header className="navbar App-header" id="nav-container" style={{backgroundImage: `url(${bkg})`}}>
                     <div className="col-4" >
                         {loggedIn ? (
                             <section className="navbar-section">
