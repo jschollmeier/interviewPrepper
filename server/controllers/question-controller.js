@@ -3,8 +3,8 @@ const q = require('../database/models/');
 
 module.exports = {
     create: function(req, res){
-        q.create(req.body)
-        .then(q => res.json(q))
+        q.Question.create(req.body)
+        .then(qQuestion => res.json(qQuestion))
         .catch(err => res.status(404).json(err));
     },
 
@@ -36,8 +36,6 @@ module.exports = {
 }
 
 
-<<<<<<< HEAD
-=======
 
 
 
@@ -53,4 +51,3 @@ module.exports = {
 
 
 
->>>>>>> 56ca77cc808a30058c0b32ac1f50394cf97a5a0c
