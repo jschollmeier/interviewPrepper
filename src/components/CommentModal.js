@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactModal from 'react-modal';
+import bkg from "./ice_age_@2X.png";
+import bkg2 from "./vintage-wallpaper.png";
 
 
 const customStyles = {
@@ -11,7 +13,9 @@ const customStyles = {
       marginRight           : '-50%',
       transform             : 'translate(-50%, -50%)',
       width                 : '40%',
-      textAlign             : 'center'
+      textAlign             : 'center',
+      backgroundImage       : `url(${bkg})`,
+      borderRadius          : '25px'
     }
   };
 
@@ -40,7 +44,7 @@ export default function CommentModal(props) {
 
  <div className="modal-dialog" role="document">
     <div className="modal-content">
-      <div className="modal-header">
+      <div className="modal-header" style={{backgroundImage : `url(${bkg2})`,color:"white", width:'105%', marginLeft:"-18px", marginTop:"-25px", paddingBottom:"20px"}}>
         <h5 className="modal-title">New Comment</h5>
 
 
@@ -52,13 +56,13 @@ export default function CommentModal(props) {
               <div className="row">
             <label htmlFor="message-text" className="col-form-label">Comment:</label>
             </div>
-            <textarea style={{width:'95%'}} rows="2" className="body" onChange={props.bodyInputChange} id="message-text"></textarea>
+            <textarea style={{width:'95%', borderRadius:'25px'}} rows="2" className="body" onChange={props.bodyInputChange} id="message-text"></textarea>
           </div>
         </form>
       </div>
       <div className="modal-footer">
-        <button type="button" className="btn btn-primary" onClick={props.saveBlogPost}>Add Comment</button>
-        <button type="button" className="btn btn-secondary" onClick={props.closeModal} data-dismiss="modal">Close</button>
+      <button type="button" className="btn btn-primary" onMouseOver={function(event){changeBackground(event)}} onMouseLeave={function(event){changeBackgroundBack(event)}} style={{backgroundColor:"#5F9EA0", borderRadius:"25px", borderColor:"#7FFFD4", width:'100px', marginLeft:'8px'}} onClick={props.saveBlogPost}>Comment</button>
+        <button type="button" className="btn btn-secondary" style={{color:"#5F9EA0", borderColor:"#7FFFD4", borderRadius:"25px"}} onClick={props.closeModal} data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
