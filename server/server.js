@@ -43,8 +43,10 @@ app.use(passport.session()) // calls the deserializeUser
 app.use('/user', user)
 app.use('/blogs', blog)
 app.use('/comments', comments)
-app.use(questions)
-app.use(answers)
+
+ app.use('/questions', questions)
+app.use('/answers', answers)
+
 
 
 // Starting Server 
