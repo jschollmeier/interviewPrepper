@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import BlogCard from './BlogCard';
 import Modal from './Modal';
 import API from "../utils/API"
+import bkg from "./vintage-wallpaper.png"
 import { Redirect } from 'react-router-dom'
 
 
@@ -75,13 +76,22 @@ saveBlogPost = () => {
 }
 
 deleteBlogPost = (blogId) => {
-    API.deleteBlog(blogId)
-    .then(res => this.loadBlogs())
-    .catch(err => console.log(err));
+    
+    if (window.confirm('Are you sure you want to delete this blog post?')) {
 
-    API.deleteComments(blogId)
-    .then(res => this.loadBlogs())
-    .catch(err => console.log(err));
+            API.deleteBlog(blogId)
+             .then(res => this.loadBlogs())
+             .catch(err => console.log(err));
+
+            API.deleteComments(blogId)
+             .then(res => this.loadBlogs())
+             .catch(err => console.log(err));
+
+      } else {
+        return;
+      }
+
+    
 
 }
 
@@ -102,18 +112,30 @@ render(){
     const blogger = this.state.blogs;
     console.log(this.state.loggedIn)
     return (
-        <div>
-            <h1>Blog</h1>
-            
+        <div style={{ width:"80%",height:"100%", paddingBottom:"5px",marginLeft:"10%", maginRight:"10%", borderRadius:"25px", borderStyle: "outset", borderColor:"#FAFAD2"}}>
 
-            <Modal
-            open = {this.state.open}
-            openUp = {this.openup}
-            titleInputChange = {this.titleInputChange}
-            bodyInputChange = {this.bodyInputChange}
-            saveBlogPost = {this.saveBlogPost}
-            closeModal = {this.closeModal}
-            />
+            
+            <div className = "jumbotron" style={{ borderRadius:"25px", backgroundImage: `url(${bkg})`, color:"white"}}>
+   
+            <div className = "container">
+                 <h1>Prep Blog</h1>
+                  
+      
+                  <div>
+                  <Modal
+                    open = {this.state.open}
+                    openUp = {this.openup}
+                    titleInputChange = {this.titleInputChange}
+                    bodyInputChange = {this.bodyInputChange}
+                    saveBlogPost = {this.saveBlogPost}
+                    closeModal = {this.closeModal}
+                  />
+                  </div>
+             </div>
+   
+            </div>
+
+            
             {blogger.map((blogObj, i) =>
             <BlogCard 
             key={i} 

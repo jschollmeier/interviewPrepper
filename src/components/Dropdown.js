@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CommentCard from "./CommentCard"
 import API from "../utils/API"
 import CommentModal from './CommentModal';
+import bkg from './beige-tiles.png';
 
 
 
@@ -61,6 +62,15 @@ export default class DropDown extends Component{
     closeModal = () => {
         this.setState({open:false})
     }
+
+    changeBackground(e) {
+        e.target.style.background = '#2F4F4F'
+        
+      }
+    changeBackgroundBack(e) {
+        e.target.style.background = '#5F9EA0'
+        
+      }
     
 
     render(){
@@ -69,10 +79,10 @@ export default class DropDown extends Component{
             const commenter = this.state.comments;
             return(
                 <div>
-            <button className="btn btn-primary btn-sm" onClick={this.toggle} style={{marginLeft:"5px",display:"inline-block"}}>Comments</button> 
+            <button className="btn btn-sm" onMouseOver={this.changeBackground} onMouseLeave={this.changeBackgroundBack} onClick={this.toggle} style={{marginLeft:"5px", color:"white", backgroundColor:"#5F9EA0", borderRadius:"25px", borderColor:"#7FFFD4"}}>Comments</button> 
         <div style={{display:"block"}}>
             
-            
+        <div style={{backgroundImage: `url(${bkg})`, float:'right', width: '95%', margin:"20px", borderRadius:"25px", borderStyle: "outset", borderColor:"#FAFAD2"}}>
         {commenter.map((commentObj, i) => <CommentCard key={i} data={commentObj} /> )}
         <CommentModal 
         open = {this.state.open}
@@ -81,6 +91,7 @@ export default class DropDown extends Component{
         saveBlogPost = {this.addComment}
         closeModal = {this.closeModal}
         />
+        </div>
 
         
 
@@ -93,32 +104,8 @@ export default class DropDown extends Component{
         else{
             return(
                 <div>
-                 <button className="btn btn-primary btn-sm" onClick={this.toggle} style={{marginLeft:"5px",display:"inline-block"}}>Comments</button> 
-                <div style={{display:"none"}}>
-                 <div className="card" style={{margin:"25px", width:"60%", marginRight:"20%", marginLeft:"20%",backgroundColor:"White" }}>
-                 <div className="card-header text-muted" style={{textAlign: "right", whiteSpace:"nowrap"}}>
-                    <div style={{ marginTop:"-5px", fontSize:"10px"}}>
-                            posted by me<br></br>  at 
-                        </div>
-                    
-
-                </div>
-                    <div className="card-body" style={{textAlign:"left"}}>
+                 <button className="btn btn-sm" onMouseOver={this.changeBackground} onMouseLeave={this.changeBackgroundBack} onClick={this.toggle} style={{marginLeft:"5px", color:"white", backgroundColor:"#5F9EA0", borderRadius:"25px", borderColor:"#7FFFD4"}}>Comments</button> 
                 
-                
-                
-                    
-                         <p className="card-text" style={{marginLeft:"15px"}}>this is a comment</p>
-
-                     </div>
-             
-            
-             </div>
-            
-
-
-
-                </div>
                 </div>
 
 

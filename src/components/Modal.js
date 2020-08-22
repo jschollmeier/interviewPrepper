@@ -17,10 +17,19 @@ const customStyles = {
 
 
 export default function Modal(props) {
+
+      function changeBackground(e) {
+        e.target.style.background = '#2F4F4F'
+        
+      }
+      function changeBackgroundBack(e) {
+        e.target.style.background = '#5F9EA0'
+        
+      }
     
     return (
         <div>
-        <button className="btn" style={{backgroundColor:"darkgray"}} onClick={props.openUp}>New Post</button>
+        <button onMouseOver={function(event){changeBackground(event)}} onMouseLeave={function(event){changeBackgroundBack(event)}} className="btn btn-primary" style={{backgroundColor:"#5F9EA0", borderRadius:"25px", marginBottom:"5px", borderColor:"#7FFFD4", marginTop:"-12px"}} onClick={props.openUp}>New Post</button>
         <ReactModal
           isOpen={props.open}
           ariaHideApp={false}
