@@ -1,14 +1,13 @@
 const mongoose = require("mongoose");
-const { model } = require("./question-model");
 const Schema = mongoose.Schema;
 
 const answerSchema = new Schema({
- title:{
-     type:String,
- },
- content:{
-     type:String
- }
+ title:{ type:String, required: true},
+    
+
+ content:{type: String, required: true}
+     
+ 
 });
 
 const Answer = mongoose.model("Answer", answerSchema);
