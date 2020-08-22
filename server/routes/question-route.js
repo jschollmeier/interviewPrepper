@@ -3,14 +3,14 @@ const questions = require("../controllers/question-controller.js");
 
 
 router.route("/questions")
-    .get(blogController.findAll)
-    .post(blogController.create);
+    .get(questions.findAll)
+    .post(questions.create);
 
 router  
     .route("questions/:id")
-    .get(blogController.findById)
-    .put(blogController.update)
-    .delete(blogController.remove);
+    .get(questions.findById)
+    .put(questions.update)
+    .delete(questions.remove);
 
 
 module.exports = router;
