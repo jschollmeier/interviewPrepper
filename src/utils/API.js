@@ -20,6 +20,11 @@ export default {
     },
     deleteComments: function(blogId) {
         return axios.delete("/comments/"+blogId)
+    },
+    getQuestion: function() {
+        return axios.get("/questions")
+    },
+    getAnswer: function() {
+        return axios.get("/answers")
     }
-
 }

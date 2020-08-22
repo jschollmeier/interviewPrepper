@@ -67,14 +67,9 @@ class App extends Component {
           render={() =>
             <LoginForm
               updateUser={this.updateUser}
-            />} />
-         {/* <Route 
-        //   path="/login"
-        //   render={() =>
-        //     <LoginForm
-        //       updateUser={this.updateUser}
-        //     />}
-        // /> */}
+            />} 
+        />
+        
         <Route
           path="/signup"
           render={() =>
