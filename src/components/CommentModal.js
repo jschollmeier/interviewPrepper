@@ -18,14 +18,22 @@ const customStyles = {
 
 export default function CommentModal(props) {
     
+  function changeBackground(e) {
+    e.target.style.background = '#2F4F4F'
+    
+  }
+  function changeBackgroundBack(e) {
+    e.target.style.background = '#5F9EA0'
+    
+  }
+
+
     return (
         <div>
-        <button className="btn" style={{backgroundColor:"darkgray"}} onClick={props.openUp}>Add Comment</button>
+        <button onMouseOver={function(event){changeBackground(event)}} onMouseLeave={function(event){changeBackgroundBack(event)}} className="btn btn-sm" style={{color:"white", backgroundColor:"#5F9EA0", borderRadius:"25px", marginBottom:"5px", borderColor:"#7FFFD4", marginRight:"5px"}} onClick={props.openUp}>Add Comment</button>
         <ReactModal
           isOpen={props.open}
           ariaHideApp={false}
-        //   onAfterOpen={afterOpenModal}
-        //   onRequestClose={closeModal}
           style={customStyles}
           contentLabel="Example Modal"
         >

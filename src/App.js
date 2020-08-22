@@ -53,7 +53,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App" style={{backgroundColor:"Gainsboro"}}>
+      <div className="App" style={{ height:"100%"}}>
    
         <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {/* greet user if logged in: */}
@@ -67,14 +67,9 @@ class App extends Component {
           render={() =>
             <LoginForm
               updateUser={this.updateUser}
-            />} />
-         {/* <Route 
-        //   path="/login"
-        //   render={() =>
-        //     <LoginForm
-        //       updateUser={this.updateUser}
-        //     />}
-        // /> */}
+            />} 
+        />
+        
         <Route
           path="/signup"
           render={() =>
