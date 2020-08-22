@@ -3,7 +3,7 @@ const q = require('../database/models/');
 
 module.exports = {
     create: function(req, res){
-        q.create(req.body)
+        q.Question.create(req.body)
         .then(q => res.json(q))
         .catch(err => res.status(404).json(err));
     },
