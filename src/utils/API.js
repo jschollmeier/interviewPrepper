@@ -23,5 +23,8 @@ export default {
     },
     getQuestion: function() {
         return axios.get("/questions")
+    },
+    getAnswer: function() {
+        return axios.get("/answers")
     }
 }
