@@ -1,10 +1,10 @@
-const q = require('../database/models/question-model.js');
+const q = require('../database/models/');
 
 
 module.exports = {
     create: function(req, res){
-        q.Question.create(req.body)
-        .then(qQuestion => res.json(qQuestion))
+        q.create(req.body)
+        .then(q => res.json(q))
         .catch(err => res.status(404).json(err));
     },
 
