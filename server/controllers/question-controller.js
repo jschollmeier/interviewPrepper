@@ -1,8 +1,6 @@
 const q = require('../database/models/question-model.js');
 
 
-
-
 module.exports = {
     create: function(req, res){
         q.Question.create(req.body)
