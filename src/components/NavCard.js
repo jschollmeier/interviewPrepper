@@ -40,6 +40,7 @@ import API from '../utils/API';
     render() {
       
       return (
+        <div style={{overflow:"hidden", display:"block", clear:"both", width:"96%",height:"100%", padding:"1%",marginLeft:"3%", maginRight:"10%", borderRadius:"25px", borderStyle: "outset", borderColor:"#FAFAD2"}}>
         <main>
           <Tabs>
             Problem
@@ -58,6 +59,7 @@ import API from '../utils/API';
             <span>Hints goe here</span>
           </Tabs>
         </main>
+        </div>
       );
     }
   }
