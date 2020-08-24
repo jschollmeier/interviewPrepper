@@ -9,21 +9,32 @@ import { Col, Row, Container } from "../components/Grid";
 import bkg from "./vintage-wallpaper.png"
 
 export default class Editor extends Component {
-  state = {
+ constructor(props){
+   super(props);
+   this.state = {
     code: "",
-    output: ""
+    output: "",
+    input: ""
   }
+  this.handleChange = this.handleChange.bind(this);
+  
+ }
+  
 
-  runStringFunction = (obj) => {
+  runStringFunction = (obj, input) => {
     // TODO: Pass the input (e.g. string, number, array) into the last parantheses ()
-    return Function('"use strict"; return (' + obj + ')')()();
+    return Function('"use strict"; return (' + obj + ')')()(input.split(','));
   }
   handleFunctionCall = (event) => {
     event.preventDefault();
     // TODO: Compare this value with the expected output
-    const output = this.runStringFunction(this.state.code).toString();
+    const output = this.runStringFunction(this.state.code, this.state.input).toString();
     this.setState({output})
      
+  };
+
+  handleChange(event) {
+    this.setState({input: event.target.value});
   };
 
   render() {
@@ -79,6 +90,10 @@ export default class Editor extends Component {
                 showGutter: true
               }}
         />
+        <form>
+        <label for="fname">Input:</label>
+        <input type="text" id="fname" name="fname" value={this.state.input} onChange={this.handleChange}></input>
+        </form>
         <button onClick={this.handleFunctionCall} onMouseOver={function(event){changeBackground(event)}} onMouseLeave={function(event){changeBackgroundBack(event)}} style={{overflow:"hidden", display:"block", clear:"both", color: "white", backgroundColor:"#5F9EA0", borderRadius:"25px", borderColor:"#7FFFD4",marginBottom:"15px",width:"200px",height:"50px", marginRight:"40px", float:"right"}}>Execute</button>
       </div>
       </ Container >
