@@ -79,6 +79,7 @@ export default class Editor extends Component {
           }}
             style={{borderRadius:"25px", marginTop:"1%", marginBottom:'1%'}}
             splits={2}
+            fontSize="16px"
             orientation="beside"
             value={[this.state.code,this.state.output]}
             name="UNIQUE_ID_OF_DIV"
@@ -91,8 +92,8 @@ export default class Editor extends Component {
               }}
         />
         <form>
-        <label for="fname">Input:</label>
-        <input type="text" id="fname" name="fname" value={this.state.input} onChange={this.handleChange}></input>
+        <label for="fname" style={{whiteSpace:'pre', fontSize:"24px"}}>Input Array:[ </label>
+        <input type="text" id="fname" name="fname" value={this.state.input} onChange={this.handleChange}></input><label style={{fontSize:"24px", whiteSpace:'pre'}}> ]</label>
         </form>
         <button onClick={this.handleFunctionCall} onMouseOver={function(event){changeBackground(event)}} onMouseLeave={function(event){changeBackgroundBack(event)}} style={{overflow:"hidden", display:"block", clear:"both", color: "white", backgroundColor:"#5F9EA0", borderRadius:"25px", borderColor:"#7FFFD4",marginBottom:"15px",width:"200px",height:"50px", marginRight:"40px", float:"right"}}>Execute</button>
       </div>
