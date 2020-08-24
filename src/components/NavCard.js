@@ -62,9 +62,7 @@ import API from '../utils/API';
           <Tabs>
             Problem
             <span>
-              {/* <ul>
-                {this.state.question.map((questions, index)=> <li key={index}>{questions.title}</li>)}
-              </ul> */}
+              
 
                 <div className="dropdown">
                   <button className="btn dropdown-toggle" onMouseOver={function(event){changeBackground(event)}} onMouseLeave={function(event){changeBackgroundBack(event)}} style={{color:"white", backgroundColor:"#5F9EA0", borderRadius:"25px", marginBottom:"5px", borderColor:"#7FFFD4", marginTop:"-12px"}} type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -75,7 +73,7 @@ import API from '../utils/API';
                   </div>
                 </div>
               
-                {/* {this.state.question.map((questions, index)=> <a href="#" className="dropdown-item" key={index}>{questions.title}</a>)} */}
+                
                 <br></br>
                 <br></br>
                 

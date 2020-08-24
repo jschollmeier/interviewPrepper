@@ -42,7 +42,7 @@ export default function BlogCard({data, loggedIn, username, deleteBlogPost}) {
       var datey = sqlToJsDate(data.date)
     return (
         
-        <div className="card border-info rounded" style={{borderRadius:"25px", margin:"25px", width:"70%", marginRight:"15%", marginLeft:"10%",backgroundImage: `url(${bkg})`, borderStyle: "outset",borderColor:"#778899", borderWidth:"2px" }}>
+        <div className="card border-info" style={{borderRadius:"25px", margin:"25px", width:"70%", marginRight:"15%", marginLeft:"10%",backgroundImage: `url(${bkg})`, borderStyle: "outset",borderColor:"#778899", borderWidth:"2px" }}>
             
 
             

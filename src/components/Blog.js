@@ -115,10 +115,10 @@ render(){
         <div style={{ width:"80%",height:"100%", paddingBottom:"5px",marginLeft:"10%", maginRight:"10%", borderRadius:"25px", borderStyle: "outset", borderColor:"#FAFAD2"}}>
 
             
-            <div className = "jumbotron" style={{ borderRadius:"25px", backgroundImage: `url(${bkg})`, color:"white"}}>
+            <div className = "jumbotron" style={{ overflow:"hidden", display:"block", clear:"both", borderRadius:"25px", backgroundImage: `url(${bkg})`, color:"white", maxHeight:"100px"}}>
    
             <div className = "container">
-                 <h1>Prep Blog</h1>
+                 <h1 style={{marginTop:"-50px"}}>Prep Blog</h1>
                   
       
                   <div>

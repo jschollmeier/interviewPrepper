@@ -14,8 +14,8 @@ const customStyles = {
       transform             : 'translate(-50%, -50%)',
       width                 : '40%',
       textAlign             : 'center',
-      backgroundImage       : `url(${bkg})`,
-      borderRadius          : '25px'
+      background            : "none",
+      border                : 'none'
     }
   };
 
@@ -44,10 +44,10 @@ export default function Modal(props) {
           
         >
 
- <div className="modal-dialog" role="document">
-    <div className="modal-content">
-      <div className="modal-header" style={{backgroundImage : `url(${bkg2})`,color:"white", width:'105%', marginLeft:"-18px", marginTop:"-25px", paddingBottom:"20px"}}>
-        <h5 className="modal-title" style={{paddingTop:"10px"}}>New Post</h5>
+ <div className="modal-dialog" role="document" style={{minWidth:"100%", borderRadius: "25px"}}>
+    <div className="modal-content" style={{backgroundImage:`url(${bkg})`, minWidth:"100%", borderRadius:"25px"}}>
+      <div className="modal-header" style={{backgroundImage : `url(${bkg2})`,color:"white", paddingBottom:"20px", borderRadius:"25px"}}>
+        <h5 className="modal-title" style={{paddingTop:"10px", textAlign:"center"}}>New Post</h5>
 
 
       </div>
@@ -55,7 +55,7 @@ export default function Modal(props) {
       <form>
           <div className="form-group">
               <div className="row">
-            <label htmlFor="recipient-name" className="col-form-label">Title</label>
+            <label htmlFor="recipient-name" className="col-form-label">Title:</label>
             </div>
             <input type="text" style={{borderRadius:"25px"}} className="form-control" onChange={props.titleInputChange} id="title"></input>
           </div>
