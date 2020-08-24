@@ -9,25 +9,25 @@ module.exports = {
     },
 
     findAll: function(req, res){
-        q.find(req.query)
+        q.Question.find(req.query)
         .then(q => res.json(q))
         .catch(err => res.status(404).json(err));
     },
 
     findById: function(req, res) {
-        q.findById(req.params.id)
+        q.Question.findById(req.params.id)
             .then(q => res.json(q))
             .catch(err => res.status(422).json(err));
     },
 
     update: function(req, res) {
-        q.findOneAndUpdate({ id: req.params.id}, req.body)
+        q.Question.findOneAndUpdate({ id: req.params.id}, req.body)
             .then(q => res.json(q))
             .catch(err => res.status(422).json(err));
     },
 
     remove: function(req, res) {
-        q.findById(req.params.id)
+        q.Question.findById(req.params.id)
             .then(q => q.remove())
             .then(q => res.json(q))
             .catch(err => res.status(422).json(err));
