@@ -25,7 +25,7 @@ class Signup extends Component {
 		event.preventDefault()
 
 		//request to server to add a new username/password
-		axios.post('/user/', {
+		axios.post(process.env.PORT+'/user/', {
 			username: this.state.username,
 			password: this.state.password
 		})

@@ -7,24 +7,24 @@ export default {
             
     },
     saveBlog: function(blogData) {
-        return axios.post("/blogs", blogData)
+        return axios.post(process.env.PORT+"/blogs", blogData)
     },
     deleteBlog: function(blogId) {
-        return axios.delete("/blogs/"+blogId)
+        return axios.delete(process.env.PORT+"/blogs/"+blogId)
     },
     saveComment: function(commentData) {
-        return axios.post("/comments", commentData)
+        return axios.post(process.env.PORT+"/comments", commentData)
     },
     getComments: function(blogId) {
-        return axios.get("/comments/"+blogId)
+        return axios.get(process.env.PORT+"/comments/"+blogId)
     },
     deleteComments: function(blogId) {
-        return axios.delete("/comments/"+blogId)
+        return axios.delete(process.env.PORT+"/comments/"+blogId)
     },
     getQuestion: function() {
-        return axios.get("/questions")
+        return axios.get(process.env.PORT+"/questions")
     },
     getAnswer: function() {
-        return axios.get("/answers")
+        return axios.get(process.env.PORT+"/answers")
     }
 }
