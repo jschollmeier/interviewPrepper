@@ -41,6 +41,5 @@
   "devDependencies": {
     "concurrently": "^3.5.1",
     "nodemon": "^1.17.5"
-  },
-  "proxy": "http://mongodb+srv://dbKent:<icebreakers1>@kents-cluster.hab9k.mongodb.net/<dbname>?retryWrites=true&w=majority"
+  }
 }
