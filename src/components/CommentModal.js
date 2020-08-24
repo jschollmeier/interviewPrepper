@@ -14,8 +14,8 @@ const customStyles = {
       transform             : 'translate(-50%, -50%)',
       width                 : '40%',
       textAlign             : 'center',
-      backgroundImage       : `url(${bkg})`,
-      borderRadius          : '25px'
+      background            : `none`,
+      border                : 'none'
     }
   };
 
@@ -42,9 +42,9 @@ export default function CommentModal(props) {
           contentLabel="Example Modal"
         >
 
- <div className="modal-dialog" role="document">
-    <div className="modal-content">
-      <div className="modal-header" style={{backgroundImage : `url(${bkg2})`,color:"white", width:'105%', marginLeft:"-18px", marginTop:"-25px", paddingBottom:"20px"}}>
+ <div className="modal-dialog" role="document" style={{minWidth:"100%", borderRadius: "25px"}}>
+    <div className="modal-content" style={{backgroundImage:`url(${bkg})`, minWidth:"100%", borderRadius:"25px"}}>
+      <div className="modal-header" style={{backgroundImage : `url(${bkg2})`,color:"white", paddingBottom:"20px", borderRadius:"25px"}}>
         <h5 className="modal-title">New Comment</h5>
 
 

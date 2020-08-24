@@ -33,9 +33,9 @@ export default function CommentCard({data}) {
     
     return(
     <div className="card" style={{margin:"25px", width:"90%", marginLeft:"6%", background:"none", borderRadius:"25px", borderStyle: "outset", borderColor:"#FAFAD2"}}>
-            <div className="card-header text-muted" style={{textAlign: "left", whiteSpace:"nowrap"}}>
+            <div className="card-header text-muted" style={{textAlign: "left", whiteSpace:"nowrap", borderRadius:"25px"}}>
                     
-                    <div style={{ marginTop:"-5px", fontSize:"10px"}}>
+                    <div style={{ marginTop:"-5px", fontSize:"10px", borderRadius:"25px"}}>
                         comment by {data.username}<br></br> at {datey.toLocaleTimeString()} on {datey.toLocaleDateString()}
                     </div>
                     

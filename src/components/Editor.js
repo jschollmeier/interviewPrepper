@@ -5,6 +5,8 @@ import { split as SplitEditor } from "react-ace";
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/webpack-resolver";
+import { Col, Row, Container } from "../components/Grid";
+import bkg from "./vintage-wallpaper.png"
 
 export default class Editor extends Component {
   state = {
@@ -26,11 +28,37 @@ export default class Editor extends Component {
 
   render() {
     console.log(typeof this.state.code);
+
+    function changeBackground(e) {
+      e.target.style.background = '#2F4F4F'
+      
+    }
+    function changeBackgroundBack(e) {
+      e.target.style.background = '#5F9EA0'
+      
+    }
+
     return (
-      <div>
+      <Container fluid>
+        
+      <div style={{overflow:"hidden", display:"block", clear:"both", width:"96%",height:"100%", paddingBottom:"0px",marginLeft:"3%", maginRight:"10%", borderRadius:"25px", borderStyle: "outset", borderColor:"#FAFAD2"}}>
+      
+      <Row>
+      <Col size="md-6">
+      <div className="header" style={{marginTop:"1%", width:"100%", marginLeft:"1%", borderRadius:"25px", backgroundImage: `url(${bkg})`, height:"60px",paddingTop:"10px", paddingBottom:"0px", color:"white"}}>
+        <h3 style={{textAlign:"center", marginLeft:"0%", marginBottom:"-20px"}}>Code</h3>
+        </div>
+        </Col>
+        <Col size="md-6">
+        <div className="header" style={{marginTop:"1%", width:"100%", marginLeft:"-1%", borderRadius:"25px", backgroundImage: `url(${bkg})`, height:"60px",paddingTop:"10px", paddingBottom:"0px", color:"white"}}>
+        <h3 style={{textAlign:"center", marginLeft:"0%", marginBottom:"-20px"}}>Console</h3>
+        </div>
+        </Col>
+      </Row>
+      
         <SplitEditor
-            width={ '100%' }
-            height={ '60vh' }
+            width={'100%' }
+            height={ '55vh' }
             mode="javascript"
             wrapEnabled={ true }
             theme="monokai"
@@ -38,6 +66,7 @@ export default class Editor extends Component {
               console.log(value);
               this.setState({code: value[0]})
           }}
+            style={{borderRadius:"25px", marginTop:"1%", marginBottom:'1%'}}
             splits={2}
             orientation="beside"
             value={[this.state.code,this.state.output]}
@@ -50,9 +79,9 @@ export default class Editor extends Component {
                 showGutter: true
               }}
         />
-        <button onClick={this.handleFunctionCall}>Execute</button>
+        <button onClick={this.handleFunctionCall} onMouseOver={function(event){changeBackground(event)}} onMouseLeave={function(event){changeBackgroundBack(event)}} style={{overflow:"hidden", display:"block", clear:"both", color: "white", backgroundColor:"#5F9EA0", borderRadius:"25px", borderColor:"#7FFFD4",marginBottom:"15px",width:"200px",height:"50px", marginRight:"40px", float:"right"}}>Execute</button>
       </div>
-      
+      </ Container >
     );
   }
 }

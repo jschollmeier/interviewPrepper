@@ -7,15 +7,18 @@ export default function Prep() {
     return (
       <Container fluid>
           <Row>
-              <Col size="md-12">
+              <Col size="md-4">
                 <NavCard />
               </Col>
-          </Row>
-          <Row>
-              <Col size="md-12">
+              <Col size="md-8">
                 <Editor />
             </Col>
           </Row>
+          {/* <Row>
+              <Col size="md-12">
+                <Editor />
+            </Col>
+          </Row> */}
       </Container>
     )
   }
