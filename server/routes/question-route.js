@@ -7,7 +7,7 @@ router.route("/questions")
     .post(questionController.create);
 
 router  
-    .route("questions/:id")
+    .route("/questions/:id")
     .get(questionController.findById)
     .put(questionController.update)
     .delete(questionController.remove);

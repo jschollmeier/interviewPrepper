@@ -4,7 +4,7 @@ const q = require('../database/models/');
 module.exports = {
     create: function(req, res){
         q.Question.create(req.body)
-        .then(qQuestion => res.json(qQuestion))
+        .then(q => res.json(q))
         .catch(err => res.status(404).json(err));
     },
 
