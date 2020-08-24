@@ -4,14 +4,17 @@ import '../style/NavCard.css'
 
 import API from '../utils/API';
 
+
+
 //modified from https://codepen.io/quentunahelper/pen/xwjmjg
   class NavCard extends Component {
     
     state= {
       question: [{title: "Question1", content: "This is Content 1"},{title: "Question4", content: "This is Content 4"},{title: "Question3", content: "This is Content 3"},{title: "Question2", content: "This is Content 2"}],
-      answer: [{title: "titlehold", content: "contenthold"}],
       title: "",
-      content: ""
+      content: "",
+      examples: [],
+      answer: []
     }
     componentDidMount(){
       this.loadQuestion();
@@ -38,9 +41,12 @@ import API from '../utils/API';
           .catch(err => console.log(err));
         }
 
-        setContent = (titley, contenty) =>{
+        setContent = (titley, contenty, exampley, answery) =>{
+          console.log(exampley)
           this.setState({title:titley})
           this.setState({content:contenty})
+          this.setState({examples:exampley[0].split('---')})
+          this.setState({answer:answery})
         }
      
     
@@ -54,7 +60,7 @@ import API from '../utils/API';
         e.target.style.background = '#5F9EA0'
         
       }
-      
+      console.log(this.state.examples)
       
       return (
         <div style={{overflow:"hidden", display:"block", clear:"both", width:"96%",height:"100%", padding:"1%",marginLeft:"3%", maginRight:"10%", borderRadius:"25px", borderStyle: "outset", borderColor:"#FAFAD2"}}>
@@ -69,7 +75,7 @@ import API from '../utils/API';
                     Questions
                   </button>
                   <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      {this.state.question.map((questions, index)=> <a onClick={()=>this.setContent(questions.title, questions.content)} className="dropdown-item" key={index} >{questions.title}</a>)}
+                      {this.state.question.map((questions, index)=> <a onClick={()=>this.setContent(questions.title, questions.content, questions.examples, questions.answer)} className="dropdown-item" key={index} >{questions.title}</a>)}
                   </div>
                 </div>
               
@@ -80,15 +86,19 @@ import API from '../utils/API';
                 <h5>{this.state.title}</h5>
                 <hr></hr>
                 <p>{this.state.content}</p>
+                <p>Examples:</p> 
+                
+                  {/* {this.state.examples.map((example, index)=> <li key={index}>Input: {example.input} Output: {example.output}</li>)} */}
+                  <p style={{whiteSpace:"pre"}}>{this.state.examples.map( (it, i) => <div key={'x'+i}>{it}</div> )}</p>
+                
             
             </span>
             Solution
             <span>
-              {this.state.answer.map((answers, index)=> <li key={index}>{answers.title}</li>)}
-              {this.state.answer.map((answers, index)=> <li key={index}>{answers.content}</li>)}
+              <p style={{whiteSpace:"pre", textAlign:"left", overflow:"hidden", display:"block", clear:"both", width:"auto"}}>{this.state.answer}</p>
             </span>
             Hints
-            <span>Hints goe here</span>
+            <span>No Hints Sorry!</span>
           </Tabs>
         </main>
         </div>

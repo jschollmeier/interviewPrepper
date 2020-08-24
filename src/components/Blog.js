@@ -110,7 +110,7 @@ render(){
     
         
     const blogger = this.state.blogs;
-    console.log(this.state.loggedIn)
+    
     return (
         <div style={{ width:"80%",height:"100%", paddingBottom:"5px",marginLeft:"10%", maginRight:"10%", borderRadius:"25px", borderStyle: "outset", borderColor:"#FAFAD2"}}>
 

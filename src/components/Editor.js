@@ -23,11 +23,11 @@ export default class Editor extends Component {
     // TODO: Compare this value with the expected output
     const output = this.runStringFunction(this.state.code).toString();
     this.setState({output})
-    console.log (output); 
+     
   };
 
   render() {
-    console.log(typeof this.state.code);
+    // console.log(typeof this.state.code);
 
     function changeBackground(e) {
       e.target.style.background = '#2F4F4F'
@@ -63,7 +63,7 @@ export default class Editor extends Component {
             wrapEnabled={ true }
             theme="monokai"
             onChange={(value, stat) => {
-              console.log(value);
+              
               this.setState({code: value[0]})
           }}
             style={{borderRadius:"25px", marginTop:"1%", marginBottom:'1%'}}
