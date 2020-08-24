@@ -32,6 +32,11 @@ module.exports = {
             .then(q => res.json(q))
             .catch(err => res.status(422).json(err));
 
+    },
+    deleteAll: function(req, res) {
+        q.Question.remove({})
+        .then(q => res.json(q))
+        .catch(err => res.status(422).json(err));
     }
 }
 

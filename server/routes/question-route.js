@@ -4,7 +4,8 @@ const questionController = require("../controllers/question-controller.js");
 
 router.route("/questions")
     .get(questionController.findAll)
-    .post(questionController.create);
+    .post(questionController.create)
+    .delete(questionController.deleteAll);
 
 router  
     .route("/questions/:id")
