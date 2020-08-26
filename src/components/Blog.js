@@ -47,7 +47,7 @@ openup = () => {
     this.setState({open:true})
     }else{
         this.setState({
-            redirectTo: '/'
+            redirectTo: '/login'
         })
         alert("Please log in to add a post")
 
@@ -60,9 +60,7 @@ closeModal = () => {
 
 saveBlogPost = () => {
 
-    console.log(this.state.title);
-    console.log(this.state.body);
-    console.log(this.props.username);
+    
     const holdUserName = this.props.username;
     API.saveBlog({
         title: this.state.title,
